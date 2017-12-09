@@ -5,12 +5,12 @@ import { Observable } from 'rxjs/Observable';
 // import 'rxjs/add/operator/retry';
 
 @Injectable()
-export class CatsService {
+export class PersonsService {
 
   constructor(private httpService: HttpClient) {
   }
  
-  public getCats() : Observable<Object[]> {
+  public getPersons() : Observable<Object[]> {
     return this.httpService.get<Object[]>('http://agl-developer-test.azurewebsites.net/people.json')
   }
 

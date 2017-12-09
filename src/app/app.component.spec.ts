@@ -1,5 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { readFile } from 'fs' 
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -31,4 +33,10 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('cat-gender .female').textContent).toContain('');
   }));
+  // it('should sort correctly', () => {
+  //   readFile('./sort-underscore.directive.spec.ts', 'UTF-8', (err, data) => {
+  //     directive.cats = JSON.parse(data);
+  //   });;
+  // }
+
 });

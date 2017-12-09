@@ -1,4 +1,4 @@
-import { Directive, EventEmitter, HostListener, Input } from '@angular/core';
+import { Directive, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { _ } from 'underscore';
 
 @Directive({
@@ -6,14 +6,18 @@ import { _ } from 'underscore';
 })
 export class SortUnderscoreDirective  {
 
+  @Output() 
+  public mCatsChange:EventEmitter<object[]> = new EventEmitter<object[]>();
   @Input()
-  public femaleCats: object[];
+  public mCats: object[];
+
+  @Output() 
+  public fCatsChange:EventEmitter<object[]> = new EventEmitter<object[]>();
+  @Input()
+  public fCats: object[];
 
   @Input()
-  public maleCats: object[];
-
-  @Input()
-  public cats: object[];
+  public persons: object[];
 
   @HostListener('click', ['$event']) 
   onClick(e) {
@@ -21,10 +25,23 @@ export class SortUnderscoreDirective  {
   }
   
   private sortFunction() {
-    let cats;
-    cats = _.filter(this.cats, obj => { return obj.cats !== null })
-    cats = _.map(cats, obj => { return obj.cats });
-//    cats = _.invoke()
+    
+    let genders = _.groupBy(this.persons, person => person.gender);
+
+    let cats = _.mapObject(genders, (gender, index) => {
+      let pets = _.pluck(gender, 'pets');
+      pets = _.flatten(_.map(pets, _.values)) 
+      pets = _.filter(pets, pet => pet.type === 'Cat');
+      pets = _.sortBy(pets, 'name');
+      return pets;
+    });
+
+    this.mCats  =  cats['Male'];
+    this.fCats  = cats['Female']
+
+    this.mCatsChange.emit(this.mCats);
+    this.fCatsChange.emit(this.fCats);
+      
   }
 
 }

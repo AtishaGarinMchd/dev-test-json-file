@@ -10,7 +10,7 @@ import { SortObservableDirective } from './sort-observable.directive';
 import { SortVanillaDirective } from './sort-vanilla.directive';
 import { SortButtonComponent } from './sort-button/sort-button.component';
 
-import { CatsService } from './cats.service';
+import { PersonsService } from './persons.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { CatsService } from './cats.service';
     HttpClientModule
   ],
   providers: [
-    CatsService
+    PersonsService
   ],
   bootstrap: [AppComponent]
 })
