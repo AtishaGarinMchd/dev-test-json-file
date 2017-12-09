@@ -1,0 +1,7 @@
+<div *ngIf="cats?.length > 0" class='cat-gender-body' [style.backgroundColor]="backgroundColor">
+  <h1>List of {{ gender }} cats</h1>
+  <ul>
+    <cat-detail *ngFor="let cat of cats" [cat]="cat"></cat-detail>
+  </ul>
+<div>
+

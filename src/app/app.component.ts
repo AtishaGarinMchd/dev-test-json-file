@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CatsService } from './cats.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  
+  public cats: object[];
+  public maleCats: object[]
+  public femaleCats: object[]
+  private error: string = null;
+
+  constructor(private catsService: CatsService) {}
+
+  ngOnInit() 
+  {
+    this.catsService.getCats().subscribe(data => {
+      this.cats = data;
+    }, err => {
+        this.error = "Sorry, something wrong happened retrieving my Precious data :( \r\n Please reload the page. ";
+    });
+  }
+
 }
