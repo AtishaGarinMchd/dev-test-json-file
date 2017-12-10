@@ -1,4 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
     Cats. Mieow !
@@ -10,10 +9,10 @@
 <div> 
   <cat-gender class="male" [gender]="'male'" [cats]="maleCats"></cat-gender>
   <cat-gender class="female" [gender]="'female'" [cats]="femaleCats"></cat-gender>
-  <h3>Use buttons below to select Sorting tech.</h3>
   <div class="sort-btns">
-    <sort-button sortUnderscore text="Underscore" [persons]="persons" [(mCats)]="maleCats" [(fCats)]="femaleCats"></sort-button>
-    <sort-button sortObservable text="Observable" [persons]=persons [mCats]="maleCats" [fCats]="femaleCats"></sort-button>
-    <sort-button sortVanilla text="VanillaJS" [cats]=persons [maleCats]="maleCats" [femaleCats]="femaleCats"></sort-button>
+    <sort-button sortUnderscore text="Sort data" [persons]="persons" [(mCats)]="maleCats" [(fCats)]="femaleCats"></sort-button>
   </div>
+  <div class="box">
+    {{ personsStringified }}
+  <div>
 </div>

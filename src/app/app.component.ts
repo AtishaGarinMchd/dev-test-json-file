@@ -14,6 +14,7 @@ export class AppComponent {
 
   public maleCats: object[]
   public femaleCats: object[]
+
   private error: string = null;
 
   constructor(private personsService: PersonsService) {}
@@ -25,8 +26,11 @@ export class AppComponent {
     }, err => {
         this.error = "Sorry, something wrong happened retrieving my Precious data :( \r\n Please reload the page. ";
     });
-    
     this.getPersons = this.personsService.getPersons();
   }
-
+  
+  private get personsStringified(): string {
+    return JSON.stringify(this.persons);
+  }
+  
 }
