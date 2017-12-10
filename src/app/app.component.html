@@ -1,18 +1,25 @@
-<div style="text-align:center">
-  <h1>
-    Cats. Mieow !
-  </h1>
-</div>
-<div ng-if="error != null">
-    {{ error }}
-</div>
-<div> 
+<div class="app">
+  <div class="jumbotron">
+    <h2>
+      Cats. Mieow !
+    </h2>
+    <p>This is a small development exercise, about downloading a Json file (see below) and grouping all known Cats depending on the gender of it's owner</p>
+  </div>
+  <div *ngIf="error != ''">
+    <div class="alert alert-danger" role="alert">
+      {{ error }}
+    </div>
+  </div>
   <cat-gender class="male" [gender]="'male'" [cats]="maleCats"></cat-gender>
   <cat-gender class="female" [gender]="'female'" [cats]="femaleCats"></cat-gender>
-  <div class="sort-btns">
-    <sort-button sortUnderscore text="Sort data" [persons]="persons" [(mCats)]="maleCats" [(fCats)]="femaleCats"></sort-button>
-  </div>
-  <div class="box">
-    {{ personsStringified }}
+  <sort-button sortUnderscore text="Sort data" [persons]="persons" [(mCats)]="maleCats" [(fCats)]="femaleCats"></sort-button>
+  <div class="panel panel-info">
+      <div class="panel-heading">
+        <h4>Source Json file</h4>
+        <p>Direct from AGL's Azure server via HttpClient.get</p>
+      </div>
+      <div class="panel-body">
+        {{ personsStringified }}
+      </div>
   <div>
 </div>

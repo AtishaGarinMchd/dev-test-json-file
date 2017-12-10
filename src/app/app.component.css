@@ -1,8 +1,4 @@
-div .sort-btns {
-    display: flex;
-    flex-direction: row;
-}
-
-div .sort-btns * {
-    width: 30%;
+.app { 
+    min-width: 300px;
+    margin: 20px 10%;
 }

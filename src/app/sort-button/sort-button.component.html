@@ -1,1 +1,1 @@
-<button class="btn-primary btn">{{ text }}</button>
+<button [ngClass]="{'btn': true, 'btn-primary': !clicked, 'btn-success': clicked,  'btn-lg': true}" (onClick)=btnClick($event)>{{ text }}</button>

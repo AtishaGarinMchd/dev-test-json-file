@@ -1,7 +1,11 @@
-<div *ngIf="cats?.length > 0" class='box' [style.backgroundColor]="backgroundColor">
-  <h1>List of {{ gender }} cats</h1>
-  <ul>
-    <cat-detail *ngFor="let cat of cats" [cat]="cat"></cat-detail>
-  </ul>
-<div>
+<div *ngIf="cats?.length > 0" class="panel panel-default">
+    <div class="panel-heading" [style.background-color]="gender === 'female' ? '#f4427d' : '#4174f4'">
+        <h3 class="panel-title">Cats owned by a {{ gender }} human.</h3>
+    </div>
 
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let cat of cats">
+        <cat-detail [cat]="cat"></cat-detail>
+      </li>
+    </ul>
+</div>

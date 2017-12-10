@@ -17,8 +17,4 @@ export class CatGenderComponent implements OnInit {
   ngOnInit() {
   }
 
-  private get backgroundColor() {
-    return (this.gender === 'female' ? 'f4427d' : '4174f4');
-  }
-
 }

@@ -15,7 +15,7 @@ export class AppComponent {
   public maleCats: object[]
   public femaleCats: object[]
 
-  private error: string = null;
+  private error: string = '';
 
   constructor(private personsService: PersonsService) {}
 
