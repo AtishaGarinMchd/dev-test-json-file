@@ -5,20 +5,20 @@ export class AppPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  geth2() {
+    return element(by.css('h2')).getText();
   }
 
-  getMaleList() {
-    return element(by.css('app-root h1')).getText();
+  getMaleOwnedCatName(index: number) {
+    return element(by.css('cat-gender.male div ul li:nth-child('+index+') cat-detail')).getText();
   }
 
-  getFemaleList() {
-    return element(by.css('app-root h1')).getText();
+  getFemaleOwnedCatName(index: number) {
+    return element(by.css('cat-gender.female div ul li:nth-child('+index+') cat-detail')).getText();
   }
 
   sortWithUnderscore() {
-    return element(by.css('app-root h1')).getText();
+    return element(by.css('app-root sort-button button')).click();
   }
 
 
