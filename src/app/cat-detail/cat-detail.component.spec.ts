@@ -16,6 +16,7 @@ describe('CatDetailComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CatDetailComponent);
     component = fixture.componentInstance;
+    component.cat = {"name":"Garfield","type":"Cat"};
     fixture.detectChanges();
   });
 

@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CatDetailComponent implements OnInit {
 
   @Input()
-  public cat: object[]
+  public cat: object;
 
   constructor() { }
 
