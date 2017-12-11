@@ -27,7 +27,7 @@ describe('CatGenderComponent', () => {
     el = fixture.debugElement.nativeElement;
   });
 
-  it('should create', () => {
+  it('should create itself', () => {
     expect(component).toBeTruthy();
   });
 
